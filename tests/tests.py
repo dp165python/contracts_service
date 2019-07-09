@@ -1,5 +1,5 @@
 import unittest
-from core.run import app
+from manage import app
 from core.tests.test_data import all_contracts
 import json
 

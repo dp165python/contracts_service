@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify, make_response
 from flask_restful import Api, Resource
-from core.models import db, Rule, RuleSchema, Contract, ContractSchema
+from core.models.models import db, Rule, Contract
+from schemas.shemas import RuleSchema, ContractSchema
 from sqlalchemy.exc import SQLAlchemyError
 from core import status
 
@@ -139,11 +140,6 @@ class RuleResource(Resource):
 
 
 class RuleListResource(Resource):
-    def get(self):
-        rules = Rule.query.all()
-        results = rule_schema.dump(rules, many=True).data
-        return results
-
     def post  (self):
         request_dict = request.get_json()
         if not request_dict:
@@ -170,6 +166,5 @@ class RuleListResource(Resource):
 
 
 api.add_resource(RuleListResource, '/rules/')
-api.add_resource(RuleResource, '/rules/<id>')
-api.add_resource(ContractListResource, '/')
-api.add_resource(ContractResource, '/<id>')
+api.add_resource(ContractListResource, '/contracts/')
+api.add_resource(ContractResource, '/contracts/<id>')
