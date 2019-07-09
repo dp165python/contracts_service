@@ -1,6 +1,6 @@
 import unittest
-from manage import app
-from core.tests.test_data import all_contracts
+from api.manage import app
+from api.core.tests.test_data import all_contracts, contract
 import json
 
 
@@ -28,6 +28,7 @@ class FlaskTestApi(unittest.TestCase):
 
     def test_post_contract(self):
         post_data = {
+            "id": "asdf",
             "contract_name": "test_name",
             "information": "test_message",
             "rule": "test_rule",
@@ -42,7 +43,7 @@ class FlaskTestApi(unittest.TestCase):
 
     def test_post_none_contract(self):
         contract = self.app.post('/contracts/', data=None)
-        self.assertEqual(contract.status_code, 404)
+        self.assertEqual(contract.status_code, 400)
 
     def test_api_wrong_address(self):
         contract = self.app.get('/contracts/test')

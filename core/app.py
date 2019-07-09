@@ -9,6 +9,6 @@ def create_app(config_filename):
     db.init_app(app)
 
     from core.resources.views import api_bp
-    app.register_blueprint(api_bp, url_prefix='/contracts')
+    app.register_blueprint(api_bp)
 
     return app
