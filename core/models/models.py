@@ -18,6 +18,16 @@ class AddUpdateDelete():
         return db.session.commit()
 
 
+class Contract(db.Model, AddUpdateDelete):
+    id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
+    name = db.Column(db.String(150), unique=True, nullable=False)
+    information = db.Column(db.String(250))
+
+    def __init__(self, name, information):
+        self.name = name
+        self.information = information
+
+
 class Rule(db.Model, AddUpdateDelete):
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     rule_name = db.Column(db.String(250), unique=True, nullable=False)
@@ -35,13 +45,3 @@ class Rule(db.Model, AddUpdateDelete):
         self.s_operand = s_operand
         self.operator = operator
         self.coefficient = coefficient
-
-
-class Contract(db.Model, AddUpdateDelete):
-    id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
-    name = db.Column(db.String(150), unique=True, nullable=False)
-    information = db.Column(db.String(250))
-
-    def __init__(self, name, information):
-        self.name = name
-        self.information = information

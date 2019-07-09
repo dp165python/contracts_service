@@ -15,11 +15,39 @@ contract_schema = ContractSchema()
 rule_schema = RuleSchema()
 
 
-class RuleResource(Resource):
+class ContractResource(Resource):
     def get(self, id):
-        rule = Rule.query.get_or_404(id)
-        result = rule_schema.dump(rule).data
+        contract = Contract.query.get_or_404(id)
+        result = contract_schema.dump(contract).data
         return result
+
+
+class ContractListResource(Resource):
+    def get(self):
+        contracts = Contract.query.all()
+        results = contract_schema.dump(contracts, many=True).data
+        return results
+
+    def post(self):
+        request_dict = request.get_json()
+        if not request_dict:
+            resp = {'message': 'No input data provided'}
+            return resp, status.HTTP_400_BAD_REQUEST
+        errors = contract_schema.validate(request_dict)
+        if errors:
+            return errors, status.HTTP_400_BAD_REQUEST
+        try:
+            contract = Contract(
+                name=request_dict['name'],
+                information=request_dict['information'])
+            contract.add(contract)
+            query = Contract.query.get(contract.id)
+            result = contract_schema.dump(query).data
+            return result, status.HTTP_201_CREATED
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            resp = jsonify({"error": str(e)})
+            return resp, status.HTTP_400_BAD_REQUEST
 
 
 class RuleListResource(Resource):
@@ -62,41 +90,7 @@ class RuleListResource(Resource):
             return resp, status.HTTP_400_BAD_REQUEST
 
 
-class ContractResource(Resource):
-    def get(self, id):
-        contract = Contract.query.get_or_404(id)
-        result = contract_schema.dump(contract).data
-        return result
-
-
-class ContractListResource(Resource):
-    def get(self):
-        contracts = Contract.query.all()
-        results = contract_schema.dump(contracts, many=True).data
-        return results
-
-    def post(self):
-        request_dict = request.get_json()
-        if not request_dict:
-            resp = {'message': 'No input data provided'}
-            return resp, status.HTTP_400_BAD_REQUEST
-        errors = contract_schema.validate(request_dict)
-        if errors:
-            return errors, status.HTTP_400_BAD_REQUEST
-        try:
-            contract = Contract(
-                name=request_dict['name'],
-                information=request_dict['information'])
-            contract.add(contract)
-            query = Contract.query.get(contract.id)
-            result = contract_schema.dump(query).data
-            return result, status.HTTP_201_CREATED
-        except SQLAlchemyError as e:
-            db.session.rollback()
-            resp = jsonify({"error": str(e)})
-            return resp, status.HTTP_400_BAD_REQUEST
-
-
-api.add_resource(RuleListResource, '/rules/')
 api.add_resource(ContractListResource, '/contracts/')
 api.add_resource(ContractResource, '/contracts/<uuid:id>')
+api.add_resource(RuleListResource, '/rules/')
+
