@@ -1,6 +1,6 @@
 import unittest
-from api.manage import app
-from api.core.tests.test_data import all_contracts, contract
+from manage import app
+from core.tests.test_data import all_contracts, contract
 import json
 
 

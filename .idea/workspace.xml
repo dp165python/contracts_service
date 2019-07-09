@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7521cc51-5d97-4d84-8f87-c30a353373a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/models/migrations/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/migrations/alembic.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/migrations/env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/migrations/script.py.mako" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/migrations/versions/efaaaba5361c_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/contracts_service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/migrations/versions/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/migrate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schemas/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schemas/shemas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/tests/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,20 +24,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/app.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/status.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/core/resources/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state>
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/models/migrate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/tests/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,9 +72,13 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/werkzeug/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="546" selection-start-line="546" selection-end-line="546" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -88,17 +94,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/resources/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -123,6 +118,7 @@
         <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/views.py" />
         <option value="$PROJECT_DIR$/core/models/migrate.py" />
+        <option value="$PROJECT_DIR$/core/tests/tests.py" />
       </list>
     </option>
   </component>
@@ -171,6 +167,12 @@
             </path>
             <path>
               <item name="contracts_service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contracts_service" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contracts_service" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -186,8 +188,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Maksym\flask\contracts_service\core\models" />
       <recent name="C:\Users\Maksym\flask\contracts_service" />
+      <recent name="C:\Users\Maksym\flask\contracts_service\core" />
+      <recent name="C:\Users\Maksym\flask\contracts_service\core\models" />
       <recent name="C:\Users\Maksym\flask\dpPython_165\contracts_service\core\tests" />
       <recent name="C:\Users\Maksym\flask\dpPython_165\contracts_service\core" />
     </key>
@@ -322,22 +325,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/core/migrate.py" />
     <entry file="file://$PROJECT_DIR$/core/models.py" />
-    <entry file="file://$PROJECT_DIR$/core/config.py" />
+    <entry file="file://$PROJECT_DIR$/config.py" />
     <entry file="file://$PROJECT_DIR$/core/shema.py" />
     <entry file="file://$PROJECT_DIR$/core/run.py" />
     <entry file="file://$PROJECT_DIR$/../contracts/api/core/status.py" />
     <entry file="file://$PROJECT_DIR$/core/views.py" />
     <entry file="file://$PROJECT_DIR$/../contracts/api/core/app.py" />
-    <entry file="file://$PROJECT_DIR$/core/models/migrate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/models/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -346,27 +339,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/resources/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/schemas/schemas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/app.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/core/status.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -381,17 +353,69 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/werkzeug/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="546" selection-start-line="546" selection-end-line="546" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/tests/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/schemas/schemas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/resources/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/models/migrate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
