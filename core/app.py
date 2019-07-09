@@ -8,7 +8,7 @@ def create_app(config_filename):
     from models.models import db
     db.init_app(app)
 
-    from resources.views import api_bp
+    from resources.resources import api_bp
     app.register_blueprint(api_bp)
 
     return app
