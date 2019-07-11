@@ -93,4 +93,3 @@ class RuleListResource(Resource):
 api.add_resource(ContractListResource, '/contracts/')
 api.add_resource(ContractResource, '/contracts/<uuid:id>')
 api.add_resource(RuleListResource, '/rules/')
-
