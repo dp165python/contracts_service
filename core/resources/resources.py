@@ -18,8 +18,7 @@ rule_schema = RuleSchema()
 class ContractResource(Resource):
     def get(self, id):
         contract = Contract.query.get_or_404(id)
-        result = contract_schema.dump(contract).data
-        return result
+        return contract_schema.dump(contract).data
 
 
 class ContractListResource(Resource):
@@ -90,6 +89,6 @@ class RuleListResource(Resource):
             return resp, status.HTTP_400_BAD_REQUEST
 
 
-api.add_resource(ContractListResource, '/contracts/')
 api.add_resource(ContractResource, '/contracts/<uuid:id>')
+api.add_resource(ContractListResource, '/contracts/')
 api.add_resource(RuleListResource, '/rules/')

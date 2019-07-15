@@ -23,10 +23,6 @@ class Contract(db.Model, AddUpdateDelete):
     name = db.Column(db.String(150), unique=True, nullable=False)
     information = db.Column(db.String(250))
 
-    def __init__(self, name, information):
-        self.name = name
-        self.information = information
-
 
 class Rule(db.Model, AddUpdateDelete):
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
@@ -38,10 +34,3 @@ class Rule(db.Model, AddUpdateDelete):
     operator = db.Column(db.String(2), nullable=False)
     coefficient = db.Column(db.String(250), nullable=False)
 
-    def __init__(self, rule_name, contract, f_operand, s_operand, operator, coefficient):
-        self.rule_name = rule_name
-        self.contract = contract
-        self.f_operand = f_operand
-        self.s_operand = s_operand
-        self.operator = operator
-        self.coefficient = coefficient
