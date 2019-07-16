@@ -1,14 +1,28 @@
-from flask import Flask
+from flask import Flask, g, session
+from sqlalchemy.orm import sessionmaker
+from config import runtime_config, Config
+from sqlalchemy import create_engine
+
+app = Flask(__name__)
+app.config.from_object(Config)
+
+engine = create_engine('postgresql://postgres:1@127.0.0.1/contracts')
 
 
-def create_app(config_filename):
-    app = Flask(__name__)
-    app.config.from_object(config_filename)
+@app.before_request
+def open_session():
+    session = sessionmaker()
+    g.conn = engine
+    session.configure(bind=g.conn)
+    g.session = session()
 
-    from models.models import db
-    db.init_app(app)
 
-    from resources.resources import api_bp
-    app.register_blueprint(api_bp)
+@app.after_request
+def close_session(e):
+    if e is None:
+        g.session.commit()
+    else:
+        g.session.rollback()
 
-    return app
+    g.session.close()
+    g.session = None
