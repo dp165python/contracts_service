@@ -24,8 +24,7 @@ class ContractResource(Resource):
 class ContractListResource(Resource):
     def get(self):
         contracts = Contract.query.all()
-        results = contract_schema.dump(contracts, many=True).data
-        return results
+        return contract_schema.dump(contracts, many=True).data
 
     def post(self):
         request_dict = request.get_json()
@@ -41,8 +40,7 @@ class ContractListResource(Resource):
                 information=request_dict['information'])
             contract.add(contract)
             query = Contract.query.get(contract.id)
-            result = contract_schema.dump(query).data
-            return result, status.HTTP_201_CREATED
+            return contract_schema.dump(query).data, status.HTTP_201_CREATED
         except SQLAlchemyError as e:
             db.session.rollback()
             resp = jsonify({"error": str(e)})
@@ -52,8 +50,7 @@ class ContractListResource(Resource):
 class RuleListResource(Resource):
     def get(self):
         rules = Rule.query.all()
-        result = rule_schema.dump(rules, many=True).data
-        return result
+        return rule_schema.dump(rules, many=True).data
 
     def post(self):
         request_dict = request.get_json()
@@ -81,8 +78,7 @@ class RuleListResource(Resource):
                 contract=contract)
             rule.add(rule)
             query = Rule.query.get(rule.id)
-            result = rule_schema.dump(query).data
-            return result, status.HTTP_201_CREATED
+            return rule_schema.dump(query).data, status.HTTP_201_CREATED
         except SQLAlchemyError as e:
             db.session.rollback()
             resp = jsonify({"error": str(e)})
