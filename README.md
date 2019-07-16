@@ -11,3 +11,4 @@ todo
 8. change request.json
 9. migrate, manage into first level
 10. runtime config
+11. urls from resources to api
