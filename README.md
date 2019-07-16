@@ -2,7 +2,7 @@
 
 todo
 1. tests
-2. pure sqlalchemy
+2. pure sqlalchemy, marshmallow
 3. docker
 4. blueprint into api module
 5. remove AddUpdateDelete
