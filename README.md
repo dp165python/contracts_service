@@ -1,6 +1,6 @@
 # contracts_service
 
-todo
+## todo
 - tests
 - pure sqlalchemy, marshmallow
 - docker
