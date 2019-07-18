@@ -3,10 +3,8 @@
 ## todo
 - tests
 - from flask_sqlalchemy to sqlalchemy
-- docker
 - remove AddUpdateDelete
 - create controllers
-- adding new rule by contract ID
 
 ## done
 - manage module into first level
@@ -17,3 +15,5 @@
 - migrate module into first level
 - urls from resources module to api module
 - blueprints into api module
+- docker
+- adding new rule by contract ID
