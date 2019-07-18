@@ -17,14 +17,14 @@ rule_schema = RuleSchema()
 
 class ContractResource(Resource):
     def get(self, id):
-        # contract = Contract.query.get_or_404(id)
-        return contract_schema.dump(Contract.query.get_or_404(id)).data
+        contract = Contract.query.get_or_404(id)
+        return contract_schema.dump(contract).data
 
 
 class ContractListResource(Resource):
     def get(self):
-        # contracts = Contract.query.all()
-        return contract_schema.dump(Contract.query.all(), many=True).data
+        contracts = Contract.query.all()
+        return contract_schema.dump(contracts, many=True).data
 
     def post(self):
         request_dict = request.get_json()
@@ -39,8 +39,8 @@ class ContractListResource(Resource):
                 name=request_dict['name'],
                 information=request_dict['information'])
             contract.add(contract)
-            # query = Contract.query.get(contract.id)
-            return contract_schema.dump(Contract.query.get(contract.id)).data, status.HTTP_201_CREATED
+            query = Contract.query.get(contract.id)
+            return contract_schema.dump(query).data, status.HTTP_201_CREATED
         except SQLAlchemyError as e:
             db.session.rollback()
             resp = jsonify({"error": str(e)})
@@ -49,8 +49,8 @@ class ContractListResource(Resource):
 
 class RuleListResource(Resource):
     def get(self):
-        # rules = Rule.query.all()
-        return rule_schema.dump(Rule.query.all(), many=True).data
+        rules = Rule.query.all()
+        return rule_schema.dump(rules, many=True).data
 
     def post(self):
         request_dict = request.get_json()
@@ -77,8 +77,8 @@ class RuleListResource(Resource):
                 coefficient=request_dict['coefficient'],
                 contract=contract)
             rule.add(rule)
-            # query = Rule.query.get(rule.id)
-            return rule_schema.dump(Rule.query.get(rule.id)).data, status.HTTP_201_CREATED
+            query = Rule.query.get(rule.id)
+            return rule_schema.dump(query).data, status.HTTP_201_CREATED
         except SQLAlchemyError as e:
             db.session.rollback()
             resp = jsonify({"error": str(e)})
