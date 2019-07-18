@@ -25,7 +25,7 @@ class ContractListResource(Resource):
         return contract_schema.dump(Contract.query.all(), many=True).data
 
     def post(self):
-        request_dict = request.get_json()
+        request_dict = request.get_json() or {}
         if not request_dict:
             resp = {'message': 'No input data provided'}
             return resp, status.HTTP_400_BAD_REQUEST
@@ -49,7 +49,7 @@ class RuleListResource(Resource):
         return rule_schema.dump(Rule.query.all(), many=True).data
 
     def post(self):
-        request_dict = request.get_json()
+        request_dict = request.get_json() or {}
         if not request_dict:
             response = {'message': 'No input data provided'}
             return response, status.HTTP_400_BAD_REQUEST
