@@ -15,4 +15,4 @@ app.register_blueprint(api_bp)
 
 api.add_resource(ContractResource, '/contracts/<uuid:id>/')
 api.add_resource(ContractListResource, '/contracts/')
-api.add_resource(RuleListResource, '/rules/')
+api.add_resource(RuleListResource, '/contracts/<uuid:id>/rules/')
