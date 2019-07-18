@@ -1,21 +1,16 @@
-from flask import Flask, Blueprint
-from flask_restful import Api
-from resources.resources import ContractResource, ContractListResource, RuleListResource
-
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
+from core.api import api_bp, api
+from core.resources.resources import ContractResource, ContractListResource, RuleListResource
 
 
-def create_app(config_filename):
-    app = Flask(__name__)
-    app.config.from_object(config_filename)
+from flask import Flask
+from core.config import runtime_config, db, migrate
+app = Flask(__name__)
+app.config.from_object(runtime_config())
+db.init_app(app)
+migrate.init_app(app, db)
 
-    from models.models import db
-    db.init_app(app)
-    app.register_blueprint(api_bp)
 
-    return app
-
+app.register_blueprint(api_bp)
 
 api.add_resource(ContractResource, '/contracts/<uuid:id>')
 api.add_resource(ContractListResource, '/contracts/')
