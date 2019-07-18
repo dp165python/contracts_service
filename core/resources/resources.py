@@ -1,9 +1,9 @@
 from flask import Blueprint, request, jsonify, make_response
 from flask_restful import Api, Resource
-from models.models import db, Rule, Contract
-from schemas.schemas import RuleSchema, ContractSchema
+from core.models.models import db, Rule, Contract
+from core.schemas.schemas import RuleSchema, ContractSchema
 from sqlalchemy.exc import SQLAlchemyError
-import status
+from core import status
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 
