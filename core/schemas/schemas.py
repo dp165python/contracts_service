@@ -1,18 +1,17 @@
-from marshmallow import Schema, fields, pre_load
-from marshmallow import validate
-from flask_marshmallow import Marshmallow
+from marshmallow import Schema, fields, pre_load, validate
+# from flask_marshmallow import Marshmallow
 
-ma = Marshmallow()
+# ma = Marshmallow()
 
 
-class ContractSchema(ma.Schema):
+class ContractSchema(Schema):
     id = fields.UUID(dump_only=True)
     name = fields.String(required=True, validate=validate.Length(3))
     rules = fields.Nested('RuleSchema', many=True, exclude=('contract',))
     information = fields.String(validate=validate.Length(1))
 
 
-class RuleSchema(ma.Schema):
+class RuleSchema(Schema):
     id = fields.UUID(dump_only=True)
     rule_name = fields.String(required=True, validate=validate.Length(1))
     contract = fields.Nested('ContractSchema', exclude=('rules',))
