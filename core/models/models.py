@@ -6,26 +6,13 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-class AddUpdateDelete():
-    def add(self, resource):
-        db.session.add(resource)
-        return db.session.commit()
-
-    def update(self):
-        return db.session.commit()
-
-    def delete(self, resource):
-        db.session.delete(resource)
-        return db.session.commit()
-
-
-class Contract(db.Model, AddUpdateDelete):
+class Contract(db.Model):
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     name = db.Column(db.String(150), unique=True, nullable=False)
     information = db.Column(db.String(250))
 
 
-class Rule(db.Model, AddUpdateDelete):
+class Rule(db.Model):
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     rule_name = db.Column(db.String(250), unique=True, nullable=False)
     contract_id = db.Column(UUID(as_uuid=True), db.ForeignKey('contract.id'), nullable=False)

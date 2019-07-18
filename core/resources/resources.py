@@ -26,17 +26,18 @@ class ContractListResource(Resource):
         contract = Contract(
             name=request_dict['name'],
             information=request_dict['information'])
-        contract.add(contract)
+        db.session.add(contract)
+        db.session.commit()
         return contract_schema.dump(Contract.query.get(contract.id)).data, status.HTTP_201_CREATED
 
 
 class RuleListResource(Resource):
-    # def get(self):
-    #     return rule_schema.dump(Rule.query.all(), many=True).data
+    def get(self):
+        return rule_schema.dump(Rule.query.all(), many=True).data
 
     def post(self, id):
-        request_dict = request.get_json() or {}
         contract = Contract.query.get_or_404(id)
+        request_dict = request.get_json() or {}
         rule = Rule(
             rule_name=request_dict['rule_name'],
             f_operand=request_dict['f_operand'],
@@ -44,5 +45,6 @@ class RuleListResource(Resource):
             operator=request_dict['operator'],
             coefficient=request_dict['coefficient'],
             contract=contract)
-        rule.add(rule)
+        db.session.add(rule)
+        db.session.commit()
         return rule_schema.dump(Rule.query.get(rule.id)).data, status.HTTP_201_CREATED
