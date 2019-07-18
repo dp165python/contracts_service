@@ -2,6 +2,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()
 
 
@@ -33,4 +34,3 @@ class Rule(db.Model, AddUpdateDelete):
     s_operand = db.Column(db.String(250), nullable=False)
     operator = db.Column(db.String(2), nullable=False)
     coefficient = db.Column(db.String(250), nullable=False)
-
