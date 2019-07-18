@@ -6,11 +6,11 @@
 - docker
 - remove AddUpdateDelete
 - create controllers
-- manage module into first level
-- runtime config
 - adding new rule by contract ID
 
 ## done
+- manage module into first level
+- runtime config
 - change returns
 - change request.json
 - from flask_marshmallow to marshmallow
