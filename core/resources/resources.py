@@ -8,9 +8,6 @@ from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 
 
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
-
 contract_schema = ContractSchema()
 rule_schema = RuleSchema()
 
@@ -78,8 +75,3 @@ class RuleListResource(Resource):
             db.session.rollback()
             resp = jsonify({"error": str(e)})
             return resp, status.HTTP_400_BAD_REQUEST
-
-
-api.add_resource(ContractResource, '/contracts/<uuid:id>')
-api.add_resource(ContractListResource, '/contracts/')
-api.add_resource(RuleListResource, '/rules/')
