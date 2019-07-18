@@ -2,8 +2,8 @@ import os
 import logging
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-
 from core.constants import APP_ENV_DEV, APP_ENV_PROD
+
 
 db = SQLAlchemy()
 migrate = Migrate()
