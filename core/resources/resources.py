@@ -29,3 +29,24 @@ class RuleListResource(Resource):
         request_dict = request.get_json() or {}
         post_rule = RuleListController.post_rule(self, request_dict, id)
         return rule_schema.dump(post_rule).data, status.HTTP_201_CREATED
+
+    # def post(self):
+    #     request_dict = request.get_json()
+    #     contract_name = request_dict['contract']['name']
+    #     contract = Contract.query.filter_by(name=contract_name).first()
+    #     if contract is None:
+    #         # create a new contract
+    #         contract = Contract(name=contract_name,
+    #                             information=request_dict['information'])
+    #         db.session.add(contract)
+    #     # create a new rule
+    #     rule = Rule(
+    #         rule_name=request_dict['rule_name'],
+    #         f_operand=request_dict['f_operand'],
+    #         s_operand=request_dict['s_operand'],
+    #         operator=request_dict['operator'],
+    #         coefficient=request_dict['coefficient'],
+    #         contract=contract)
+    #     rule.add(rule)
+    #     query = Rule.query.get(rule.id)
+    #     return rule_schema.dump(query).data, status.HTTP_201_CREATED

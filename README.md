@@ -1,6 +1,7 @@
 # contracts_service
 
 ## todo
+- fix RuleListController
 - tests
 - from flask_sqlalchemy to sqlalchemy
 - create controllers
