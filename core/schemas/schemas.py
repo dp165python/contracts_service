@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, pre_load, validate
+from marshmallow import Schema, fields, validate
 
 
 class ContractSchema(Schema):
@@ -17,16 +17,6 @@ class RuleSchema(Schema):
     operator = fields.String(validate=validate.Length(1))
     coefficient = fields.String(validate=validate.Length(1))
 
-    @pre_load
-    def process_contract(self, data):
-        contract = data.get('contract')
-        if contract:
-            if isinstance(contract, dict):
-                contract_name = contract.get('name')
-            else:
-                contract_name = contract
-            contract_dict = dict(name=contract_name)
-        else:
-            contract_dict = {}
-        data['contract'] = contract_dict
-        return data
+
+contract_schema = ContractSchema()
+rule_schema = RuleSchema()
