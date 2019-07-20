@@ -2,7 +2,7 @@ from flask import request
 from flask_restful import Resource
 
 from core import status
-from core.controllers.controllers import ContractListController, ContractController, RuleListController
+from core.controllers.controllers import ContractListController, ContractController
 from core.models.models import db, Rule, Contract
 from core.schemas.schemas import rule_schema, contract_schema
 
@@ -27,11 +27,6 @@ class ContractListResource(Resource):
 class RuleListResource(Resource):
     def post(self, id):
         request_dict = request.get_json() or {}
-        post_rule = RuleListController().post_rule(self, request_dict, id)
-        return rule_schema.dump(post_rule).data, status.HTTP_201_CREATED
-
-    def post(self, id):
-        request_dict = request.get_json() or {}
         contract = Contract.query.get_or_404(id)
         rule = Rule(
             rule_name=request_dict['rule_name'],
@@ -42,5 +37,4 @@ class RuleListResource(Resource):
             contract=contract)
         db.session.add(rule)
         db.session.commit()
-        new_rule = Rule.query.get(rule.id)
-        return rule_schema.dump(new_rule).data, status.HTTP_201_CREATED
+        return rule_schema.dump(Rule.query.get(rule.id)).data, status.HTTP_201_CREATED
