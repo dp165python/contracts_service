@@ -1,4 +1,4 @@
-from core.config import db
+from core.app import db
 from core.models.models import Contract, Rule
 
 
@@ -32,6 +32,6 @@ class RuleListController():
         coefficient = request_dict['coefficient']
         rule = Rule(rule_name=rule_name, f_operand=f_operand, s_operand=s_operand, operator=operator,
                     coefficient=coefficient, contract=contract_id)
-        # db.session.add(rule)
+        db.session.add(rule)
         db.session.commit()
         return rule

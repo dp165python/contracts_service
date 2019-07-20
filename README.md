@@ -4,9 +4,9 @@
 - fix RuleListController
 - tests
 - from flask_sqlalchemy to sqlalchemy
-- create controllers
 
 ### done
+- create controllers
 - remove AddUpdateDelete
 - manage module into first level
 - runtime config
