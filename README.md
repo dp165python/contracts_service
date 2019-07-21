@@ -1,9 +1,17 @@
 # contracts_service
 
+## installing
+`python manage.py db init`  
+`python manage.py db migrate`  
+`python manage.py db upgrade`  
+`python manage.py runserver`
+
 ## todo
-- fix RuleListController
-- tests
 - from flask_sqlalchemy to sqlalchemy
+- fix RuleListController
+
+### in progress
+- tests
 
 ### done
 - create controllers
@@ -18,9 +26,3 @@
 - blueprints into api module
 - docker
 - adding new rule by contract ID
-
-## installing
-`python manage.py db init`  
-`python manage.py db migrate`  
-`python manage.py db upgrade`  
-`python manage.py runserver`
