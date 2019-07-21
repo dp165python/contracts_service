@@ -27,5 +27,5 @@ class ContractListResource(Resource):
 class RuleListResource(Resource):
     def post(self, id):
         request_dict = request.get_json() or {}
-        post_rule = RuleListController().post_rule(self, request_dict, id)
+        post_rule = RuleListController.post_rule(self, request_dict, id)
         return rule_schema.dump(post_rule).data, status.HTTP_201_CREATED

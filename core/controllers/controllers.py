@@ -34,4 +34,5 @@ class RuleListController():
                     coefficient=coefficient, contract=contract_id)
         db.session.add(rule)
         db.session.commit()
-        return rule
+        created_rule = Rule.query.get(rule.id)
+        return created_rule
