@@ -33,17 +33,7 @@ class DevConfig(Config):
 
 
 class TestConfig(Config):
-    DB_USER = os.environ.get('DB_USER', 'postgres')
-    DB_PASSWORD = os.environ.get('DB_PASSWORD', '1')
     DEFAULT_DB = os.environ.get('DEFAULT_DB', 'test_contracts')
-    DB_HOST = os.environ.get('DB_HOST', 'localhost')
-    DB_PORT = os.environ.get('DB_PORT', 5432)
-    DEBUG = False
-    HOST = '127.0.0.1'
-    LOG_LEVEL = logging.INFO
-    TOKEN = os.environ.get('TOKEN', None)
-    SQLALCHEMY_DATABASE_URI = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DEFAULT_DB}'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 def runtime_config():
