@@ -15,7 +15,8 @@ class RuleSchema(Schema):
     f_operand = fields.String(validate=validate.Length(1))
     s_operand = fields.String(validate=validate.Length(1))
     operator = fields.String(validate=validate.Length(1))
-    coefficient = fields.String(validate=validate.Length(1))
+    coefficient = fields.Float(validate=validate.Length(1))
+    page = fields.Integer(validate=validate.Length(1))
 
 
 contract_schema = ContractSchema()

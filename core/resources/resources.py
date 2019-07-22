@@ -34,6 +34,7 @@ class RuleListResource(Resource):
             s_operand=request_dict['s_operand'],
             operator=request_dict['operator'],
             coefficient=request_dict['coefficient'],
+            page=request_dict['page'],
             contract=contract)
         db.session.add(rule)
         db.session.commit()

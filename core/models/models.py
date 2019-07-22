@@ -20,4 +20,5 @@ class Rule(db.Model):
     f_operand = db.Column(db.String(250), nullable=False)
     s_operand = db.Column(db.String(250), nullable=False)
     operator = db.Column(db.String(2), nullable=False)
-    coefficient = db.Column(db.String(250), nullable=False)
+    coefficient = db.Column(db.Float, nullable=False)
+    page = db.Column(db.Integer, nullable=False)
