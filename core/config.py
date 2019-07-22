@@ -39,10 +39,11 @@ class TestConfig(Config):
     DB_PORT = os.environ.get('DB_PORT', 5432)
     DEFAULT_DB = os.environ.get('DEFAULT_DB', 'test_contracts')
     SQLALCHEMY_DATABASE_URI = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DEFAULT_DB}'
+    DEBUG = True
 
 
 def runtime_config():
-    env = os.environ.get('APP_ENV', APP_ENV_DEV).strip().lower()
+    env = os.environ.get('APP_ENV', APP_ENV_TEST).strip().lower()
     if env == APP_ENV_PROD:
         return ProdConfig
     elif env == APP_ENV_TEST:
