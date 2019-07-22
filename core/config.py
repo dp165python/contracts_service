@@ -42,7 +42,7 @@ class TestConfig(Config):
 
 
 def runtime_config():
-    env = os.environ.get('APP_ENV', APP_ENV_TEST).strip().lower()
+    env = os.environ.get('APP_ENV', APP_ENV_DEV).strip().lower()
     if env == APP_ENV_PROD:
         return ProdConfig
     elif env == APP_ENV_TEST:

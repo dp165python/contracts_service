@@ -19,7 +19,7 @@ ENV DOCKER=1
 
 RUN echo $(ls -a)
 
-CMD ["python", "core/manage.py", "db", "init"]
-CMD ["python", "core/manage.py", "db", "migrate"]
-CMD ["python", "core/manage.py", "db", "upgrade"]
-CMD ["python", "core/manage.py", "runserver"]
+CMD ["python", "manage.py", "db", "init"]
+CMD ["python", "manage.py", "db", "migrate"]
+CMD ["python", "manage.py", "db", "upgrade"]
+CMD ["python", "manage.py", "runserver"]
