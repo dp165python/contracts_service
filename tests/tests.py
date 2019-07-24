@@ -12,10 +12,14 @@ class FlaskTestApi(unittest.TestCase):
         self.app = app.test_client()
 
     def test_get_none_contract(self):
-        contract = self.app.get('/contracts/none_contract')
+        contract = self.app.get('/contracts/4da90174-8d70-4e5d-bfc8-d075387e41e4')
         self.assertEqual(contract.status_code, 404)
 
-    def test_contracts_wrong_address(self):
+    def test_contract_wrong_address(self):
+        contract = self.app.get('/contracets/4da90174-8d70-4e5d-bfc8-d075387e41e3')
+        self.assertEqual(contract.status_code, 404)
+
+    def test_contracts_wrong_addresses(self):
         contracts = self.app.get('/contractes/')
         self.assertEqual(contracts.status_code, 404)
 
