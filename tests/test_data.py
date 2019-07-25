@@ -8,7 +8,8 @@ all_contracts = \
                 "f_operand": "field_number_1",
                 "coefficient": "coef_1",
                 "rule_name": "Rule_3",
-                "operator": "+"
+                "operator": "+",
+                "page": 2
             }
         ],
         "name": "Contract_1",
@@ -23,7 +24,8 @@ all_contracts = \
                 "f_operand": "field_number_1",
                 "coefficient": "coef_1",
                 "rule_name": "Rule_0",
-                "operator": "+"
+                "operator": "+",
+                "page": 3
             }
         ],
         "name": "Contract_2",
@@ -34,6 +36,8 @@ all_contracts = \
 
 contract = \
 {
-    "name": "test_contract",
-    "information": "test_information"
+    "information": "info_about_contract_3",
+    "rules": [],
+    "id": "812b9862-6815-4a10-ab90-1cd0655dc5ac",
+    "name": "Contract_3"
 }

@@ -1,5 +1,5 @@
 from core.app import db
-from core.models.models import Contract, Rule
+from core.models.models import Contract
 
 
 class ContractController():
